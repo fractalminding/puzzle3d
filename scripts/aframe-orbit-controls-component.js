@@ -274,7 +274,7 @@
 	  tick: function (t) {
 	    var render = this.data.enabled && this.isRunning ? this.updateView() : false;
 	    if (render === true && this.data.logPosition === true) {
-	      console.log(this.el.object3D.position);
+	      //console.log(this.el.object3D.position);
 	    }
 	  },
 

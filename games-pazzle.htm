@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>A-Frame Example Component - Rotate-To</title>
+    <script src="scripts/aframe-master.js"></script>
+    <script src="scripts/aframe-orbit-controls-component.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Mono" media="all" /></head>
+
+<body class="">
+    <button class="position-selector" data-position="0.17 4.14 2.79">Position 1</button>
+    <button class="position-selector" data-position="3.48 3.57 0.15">Position 2</button>
+    <button class="position-selector" data-position="-2.89 -2.51 3.20">Position 3</button>
+
+    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" aframe-inspector-removed-embedded="undefined"><canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas>
+
+        <a-entity id="camera" camera="" position="0.16864466622987295 4.177391448683221 2.742436810761656" orbit-controls="target:#target;enableDamping:true;dampingFactor:0.125;rotateSpeed:0.25;rotateToSpeed:0.04;rotateTo:0.172 4.14 2.797;logPosition:true" rotation="15.126085791453734 -199.73308738260525 0" look-controls="" data-aframe-inspector-original-camera="">
+        </a-entity>
+
+        <a-entity id="target">
+            
+            
+            
+            
+        </a-entity>
+        <a-sky color="#ECECEC" material="" geometry=""></a-sky>
+    <a-entity position="0 1.494 8.766" scale="0.483 2.882 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-2.38 1.494 5.979" scale="0.483 2.882 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-5.676 1.494 3.779" scale="0.483 2.882 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-2.334 1.494 2.667" scale="0.483 2.882 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-3.267 0.848 7.215" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="0 0.848 4.557" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-1.658 0.253 8.006" rotation="89.32412026089534 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-4.273 0.253 5.271" rotation="89.32412026089534 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-1.088 1.451 5.327" rotation="89.324 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-6.582 2.088 1.567" rotation="52.71211715203574 180.02333923010465 180.02333923010465" scale="0.483 2.215 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-3.158 0.804 1.567" rotation="50.2483986329732 0 0" scale="0.483 2.215 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-4.953 1.451 7.867" rotation="89.324 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity><a-entity position="-2.032 2.711 8.006" rotation="89.32412026089534 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry=""></a-entity></a-scene>
+
+    <script>
+        var buttons = document.querySelectorAll('.position-selector')
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', rotateTo)
+        })
+
+        function rotateTo(e) {
+            var position = e.target.dataset.position
+            document.querySelector('#camera').setAttribute('orbit-controls', 'rotateTo', position)
+        }
+    </script>
+
+
+
+</body></html>
