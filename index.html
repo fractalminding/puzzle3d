@@ -95,18 +95,29 @@
                 document.querySelector('[camera]').setAttribute('position', '19 1.50 4.148');
                 document.querySelector('[camera]').setAttribute('rotation', '-0.05 91.50 -0.17');
             }
-
+            let timeOfTruePosition = 0;
             document.querySelector('[camera]').addEventListener('componentchanged', function (evt) {
-                //console.log(evt);
+                //console.log(evt.timeStamp);
                 
                 let camera = document.querySelector('[camera]');
                 let position = document.querySelector('[camera]').getAttribute('position');
-                //console.log(position.x.toFixed(2), position.y.toFixed(2), position.z.toFixed(2));
-                if (position.y > -1.24 && position.y < 2.87
+                console.log(position.x.toFixed(2), position.y.toFixed(2), position.z.toFixed(2));
+                
+                if (position.x > 0
+                    && position.y > -1.24 && position.y < 2.87
                     && position.z > 2.83 && position.z < 6.4) {
-                    camera.removeAttribute('orbit-controls');
-                    rotateToStart();
-                } 
+                        if (timeOfTruePosition != 0) {
+                            if (evt.timeStamp - timeOfTruePosition >= 1000) {
+                                camera.removeAttribute('orbit-controls');
+                                rotateToStart();   
+                            }
+                        } else {
+                            timeOfTruePosition = evt.timeStamp;
+                        }
+                    
+                } else {
+                    timeOfTruePosition = 0;
+                }
                 
                 /* if (evt.name !== 'rotation') { return; }
                 if (evt.newData.y < 180) {
