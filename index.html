@@ -1,87 +1,119 @@
 <html>
+    <head>
+        <script src="scripts/aframe-master.js"></script>
+        <script src="scripts/aframe-orbit-controls-component.js"></script>
+    </head>
 
-<head>
-    <title>A-Frame Example Component - Rotate-To</title>
-    <script src="scripts/aframe-master.js"></script>
-    <script src="scripts/aframe-orbit-controls-component.js"></script>
-</head>
+    <body>
+        <!--button class="position-selector" data-position="0.17 4.14 2.79">Position 1</button>
+        <button class="position-selector" data-position="3.48 3.57 0.15">Position 2</button>
+        <button class="position-selector" data-position="-2.89 -2.51 3.20">Position 3</button-->
 
-<body>
-    <button class="position-selector" data-position="0.17 4.14 2.79">Position 1</button>
-    <button class="position-selector" data-position="3.48 3.57 0.15">Position 2</button>
-    <button class="position-selector" data-position="-2.89 -2.51 3.20">Position 3</button>
+        <a-scene embedded background="color:#ECECEC">
 
-    <a-scene embedded>
+            <!--a-entity id="camera" camera position="0 0 5" orbit-controls="
+                target: #target;
+                enableDamping: true;
+                dampingFactor: 0.125;
+                rotateSpeed:0.25;
+                rotateToSpeed: 0.04;
+                rotateTo: 0.172 4.140 2.797;
+                logPosition: true;
+                ">
+            </a-entity-->
+            <a-entity 
+                id="camera" 
+                camera="" 
+                position="7.137 1.076 4.885" 
+                orbit-controls="
+                    target:#target;
+                    enableDamping:true;
+                    dampingFactor:0.125;
+                    rotateSpeed:0.25;
+                    rotateToSpeed:0.04;
+                    rotateTo:0.172 4.14 2.797;
+                    logPosition:true;
+                    maxPolarAngle:3.142
+                " 
+                rotation="0.8021409131831525 89.66789493797383 0" 
+                look-controls="" 
+                data-aframe-inspector-original-camera="">
+            </a-entity>
 
-        <!--a-entity id="camera" camera position="0 0 5" orbit-controls="
-            target: #target;
-            enableDamping: true;
-            dampingFactor: 0.125;
-            rotateSpeed:0.25;
-            rotateToSpeed: 0.04;
-            rotateTo: 0.172 4.140 2.797;
-            logPosition: true;
-            ">
-        </a-entity-->
-        <a-entity id="camera" camera="" position="7.137 1.076 4.885" orbit-controls="target:#target;enableDamping:true;dampingFactor:0.125;rotateSpeed:0.25;rotateToSpeed:0.04;rotateTo:0.172 4.14 2.797;logPosition:true;maxPolarAngle:3.142" rotation="0.8021409131831525 89.66789493797383 0" look-controls="" data-aframe-inspector-original-camera="">
-        </a-entity>
+            <a-entity id="target" position="-3.37 0 4.654">
 
-        <a-entity id="target" position="-3.37 0 4.654">
+            </a-entity>
+            <a-entity position="0 1.494 8.766" scale="0.483 2.882 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-2.38 1.577 5.979" scale="0.483 2.882 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-5.676 1.672 3.779" scale="0.483 3.473 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-2.334 1.627 2.667" scale="0.483 3.161 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-3.267 0.848 7.215" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="0 0.976 4.557" scale="0.483 1.27 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-1.658 0.173 8.136" rotation="89.32412026089534 0 0" scale="0.483 2.712 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-4.273 0.253 5.271" rotation="89.32412026089534 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-1.088 1.451 5.327" rotation="89.324 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-6.582 2.469 1.062" rotation="52.71211715203574 180.02333923010465 180.02333923010465" scale="0.483 3.236 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-3.158 0.757 1.364" rotation="50.2483986329732 0 0" scale="0.483 2.557 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-4.953 1.4704962992294077 8.733" rotation="89.324 0 0" scale="0.483 2.731 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            
+            <a-entity position="-2.032 2.952 8.006" rotation="89.32412026089534 0 0" scale="0.483 2.508 0.418" material="color:#ce4040" geometry="">
+            </a-entity>
+            <!--a-sky color="#ECECEC"></a-sky-->
+        </a-scene>
 
-        </a-entity>
-        <a-entity position="0 1.494 8.766" scale="0.483 2.882 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-2.38 1.577 5.979" scale="0.483 2.882 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-5.676 1.672 3.779" scale="0.483 3.473 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-2.334 1.627 2.667" scale="0.483 3.161 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-3.267 0.848 7.215" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="0 0.976 4.557" scale="0.483 1.27 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-1.658 0.173 8.136" rotation="89.32412026089534 0 0" scale="0.483 2.712 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-4.273 0.253 5.271" rotation="89.32412026089534 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-1.088 1.451 5.327" rotation="89.324 0 0" scale="0.483 1.626 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-6.582 2.469 1.062" rotation="52.71211715203574 180.02333923010465 180.02333923010465" scale="0.483 3.236 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-3.158 0.757 1.364" rotation="50.2483986329732 0 0" scale="0.483 2.557 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-4.953 1.4704962992294077 8.733" rotation="89.324 0 0" scale="0.483 2.731 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        
-        <a-entity position="-2.032 2.952 8.006" rotation="89.32412026089534 0 0" scale="0.483 2.508 0.418" material="color:#ce4040" geometry="">
-        </a-entity>
-        <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+        <script>
+            //var buttons = document.querySelectorAll('.position-selector')
 
-    <script>
-        var buttons = document.querySelectorAll('.position-selector')
+            /* buttons.forEach(function(button) {
+                button.addEventListener('click', rotateTo)
+            })*/
 
-        buttons.forEach(function(button) {
-            button.addEventListener('click', rotateTo)
-        })
+            function rotateToStart() {
+                //var position = e.target.dataset.position
+                document.querySelector('[camera]').setAttribute('position', ' 7.176, 0.766, 4.437')
+            }
 
-        function rotateTo(e) {
-            var position = e.target.dataset.position
-            document.querySelector('#camera').setAttribute('orbit-controls', 'rotateTo', position)
-        }
-    </script>
-</body>
-
+            document.querySelector('[camera]').addEventListener('componentchanged', function (evt) {
+                //console.log(evt);
+                
+                let camera = document.querySelector('[camera]');
+                let position = document.querySelector('[camera]').getAttribute('position');
+                console.log(position);
+                if (position.x > 7 && position.x < 7.2 && position.z > 4.2 && position.z < 4.7) {
+                    //console.log('ok');
+                    
+                    camera.removeAttribute('orbit-controls');
+                    rotateToStart();
+                } 
+                
+                /* if (evt.name !== 'rotation') { return; }
+                if (evt.newData.y < 180) {
+                    //console.log(document.querySelector('[camera]').position);
+                } */
+            });
+        </script>
+    </body>
 </html>
