@@ -24,23 +24,22 @@
             <a-entity 
                 id="camera" 
                 camera="" 
-                position="7.137 1.076 4.885" 
+                position="-12.33 -6.71 19"
                 orbit-controls="
                     target:#target;
                     enableDamping:true;
                     dampingFactor:0.125;
                     rotateSpeed:0.25;
                     rotateToSpeed:0.04;
-                    rotateTo:0.172 4.14 2.797;
                     logPosition:true;
                     maxPolarAngle:3.142
                 " 
-                rotation="0.8021409131831525 89.66789493797383 0" 
+                rotation="0.172 92.3 0.1" 
                 look-controls="" 
                 data-aframe-inspector-original-camera="">
             </a-entity>
 
-            <a-entity id="target" position="-3.37 0 4.654">
+            <a-entity id="target" position="-3.37 0.92 5.32">
 
             </a-entity>
             <a-entity position="0 1.494 8.766" scale="0.483 2.882 0.418" material="color:#ce4040" geometry="">
@@ -93,7 +92,8 @@
 
             function rotateToStart() {
                 //var position = e.target.dataset.position
-                document.querySelector('[camera]').setAttribute('position', ' 7.176, 0.766, 4.437')
+                document.querySelector('[camera]').setAttribute('position', '19 1.50 4.148');
+                document.querySelector('[camera]').setAttribute('rotation', '-0.05 91.50 -0.17');
             }
 
             document.querySelector('[camera]').addEventListener('componentchanged', function (evt) {
@@ -101,10 +101,9 @@
                 
                 let camera = document.querySelector('[camera]');
                 let position = document.querySelector('[camera]').getAttribute('position');
-                console.log(position);
-                if (position.x > 7 && position.x < 7.2 && position.z > 4.2 && position.z < 4.7) {
-                    //console.log('ok');
-                    
+                //console.log(position.x.toFixed(2), position.y.toFixed(2), position.z.toFixed(2));
+                if (position.y > -1.24 && position.y < 2.87
+                    && position.z > 2.83 && position.z < 6.4) {
                     camera.removeAttribute('orbit-controls');
                     rotateToStart();
                 } 
